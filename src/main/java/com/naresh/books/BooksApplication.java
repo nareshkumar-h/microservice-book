@@ -2,10 +2,12 @@ package com.naresh.books;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 
-@CrossOrigin(origins="http://localhost:8080")
+@EnableResourceServer
 @SpringBootApplication
+@EnableFeignClients
 public class BooksApplication {
 
 	public static void main(String[] args) {
