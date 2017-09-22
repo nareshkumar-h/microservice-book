@@ -12,7 +12,7 @@ import com.naresh.books.dto.UserDTO;
 public interface UserServiceClient {
 
 	 @RequestMapping(value = "/currentuser", method = RequestMethod.GET, produces = "application/json")
-	 UserDTO getCurrentUser();
+	 UserDTO getCurrentUser(@RequestHeader("Authorization") String authorizationToken);
 	 
 	 
 	 @RequestMapping(value = "/users/{userId}", method = RequestMethod.GET, produces = "application/json")

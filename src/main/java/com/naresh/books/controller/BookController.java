@@ -37,7 +37,8 @@ public class BookController {
 	public ResponseEntity<Void> addBook(@RequestHeader("Authorization") String authorizationToken , @RequestBody Book book) {
 		System.out.println("Add Book :" + book);
 		
-		UserDTO user = userServiceClient.getCurrentUser();
+		UserDTO user = userServiceClient.getCurrentUser(authorizationToken);
+		
 		System.out.println("UserDTO:" + user);
 		if (user != null ) {
 			book.setCreatedBy(user.getId());
